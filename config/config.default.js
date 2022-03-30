@@ -122,17 +122,17 @@ module.exports = appInfo => {
     agent: false,
     clients: {
       xprofiler_console: {
-        host: '',
+        host: 'mariadb',
         port: 3306,
-        user: '',
-        password: '',
+        user: 'root',
+        password: 'ladis@123456',
         database: 'xprofiler_console',
       },
       xprofiler_logs: {
-        host: '',
+        host: 'mariadb',
         port: 3306,
-        user: '',
-        password: '',
+        user: 'root',
+        password: 'ladis@123456',
         database: 'xprofiler_logs',
       },
     },
@@ -143,17 +143,17 @@ module.exports = appInfo => {
     client: {
       sentinels: null,
       port: 6379,
-      host: '',
+      host: 'redis',
       password: '',
-      db: 0,
+      db: 1,
     },
   };
 
   // xtransit upload file
-  userConfig.xprofilerConsole = '';
+  userConfig.xprofilerConsole = 'http://116.62.48.175:8443';
 
   // xtransit manager
-  userConfig.xtransitManager = '';
+  userConfig.xtransitManager = 'http://116.62.48.175:8543';
 
   return {
     ...config,

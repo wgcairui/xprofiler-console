@@ -1,10 +1,19 @@
 
 # init unit test database script
+# dcocker cp ./ mariadb:/db
+# docker exec -it mariadb /bin/bash
+# cd /db
+# chmod 777 init_unittest_db.sh
+# ./init_unittest_db.sh
 
-PASSWORD=${MYSQL_ROOT_PASSWORD:-root}
+PASSWORD=ladis@123456
 
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_console_unittest`; CREATE DATABASE `xprofiler_console_unittest`;'
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console_unittest' < ${PWD}/db/init.sql
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console_unittest' -e 'SHOW tables;'
+echo ${PASSWORD}
 
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_logs_unittest`; CREATE DATABASE `xprofiler_logs_unittest`;'
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_console`; CREATE DATABASE `xprofiler_console`;'
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./init.sql
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./init1.sql
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./date.sql
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' -e 'SHOW tables;'
+
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_logs`; CREATE DATABASE `xprofiler_logs`;'
