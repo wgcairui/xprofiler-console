@@ -6,9 +6,7 @@ COPY . .
 
 ENV NODE_ENV prod
 
-RUN npm config set registry https://registry.npm.taobao.org && npm install --prod
-
-EXPOSE 7443
-EXPOSE 7543
+EXPOSE 8443
+EXPOSE 8543
 
 CMD [ "npm", "run", "start" ]
