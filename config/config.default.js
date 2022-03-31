@@ -15,6 +15,14 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
+  config.cluster = {
+    listen: {
+      path: '',
+      hostname: '0.0.0.0',
+      port: 8443
+    }
+  };
+
   config.keys = appInfo.name + '_1588763657594_4897';
 
   config.development = {

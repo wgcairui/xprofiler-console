@@ -32,9 +32,9 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --title=egg-server-xprofiler-console --port=8443 --workers=1",
+    "start": "egg-scripts start --title=egg-server-xprofiler-console --workers=1",
     "stop": "egg-scripts stop --title=egg-server-xprofiler-console",
-    "dev": "egg-bin dev --port=8443",
+    "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "init-test-db": "db/init_unittest_db.sh",
     "test": "npm run lint -- --fix && npm run test-local",
