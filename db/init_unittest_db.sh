@@ -12,8 +12,9 @@ echo ${PASSWORD}
 
 mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_console`; CREATE DATABASE `xprofiler_console`;'
 mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./init.sql
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./init1.sql
-mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' < ./date.sql
 mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_console' -e 'SHOW tables;'
 
 mysql -uroot -p${PASSWORD} -h127.0.0.1 -e 'DROP DATABASE IF EXISTS `xprofiler_logs`; CREATE DATABASE `xprofiler_logs`;'
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_logs' < ./init1.sql
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_logs' < ./date.sql
+mysql -uroot -p${PASSWORD} -h127.0.0.1 -D 'xprofiler_logs' -e 'SHOW tables;'
